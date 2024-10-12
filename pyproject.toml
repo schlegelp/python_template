@@ -1,0 +1,61 @@
+# Guide (user-friendly):
+# https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+
+[build-system]
+# A list of packages that are needed to build your package:
+requires = ["setuptools"]  # REQUIRED if [build-system] table is used
+# The name of the Python object that frontends will use to perform the build:
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "python_template"
+version = "0.0.1"
+description = "A sample Python project"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+keywords = ["sample"]
+authors = [
+  {name = "Philipp Schlegel", email = "pms70@cam.ac.uk" }
+]
+maintainers = [
+  {name = "Philipp Schlegel", email = "pms70@cam.ac.uk" }
+]
+# For a list of valid classifiers, see https://pypi.org/classifiers/
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+dependencies = [
+    "numpy"
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.urls]
+"Homepage" = "https://github.com/schlegelp/python_template"
+"Documentation" = "https://schlegelp.github.io/sample_project/"
+"Bug Reports" = "https://github.com/schlegelp/python_template/issues"
+"Source" = "https://github.com/pypa/sampleproject/"
+
+# The following would provide a command line executable called `sample`
+# which executes the function `main` from this package when invoked.
+# [project.scripts]
+# sample = "sample:main"
+
+
+[tool.setuptools]
+# If there are data files included in your packages that need to be
+# installed, specify them here.
+# package-data = {"sample_project" = ["*.dat"]}
